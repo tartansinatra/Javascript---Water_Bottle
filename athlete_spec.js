@@ -1,5 +1,6 @@
 var athlete = require('./athlete');
 var assert = require('assert');
+var bottle = require('./water_bottle');
 
 
 
@@ -32,8 +33,10 @@ describe('athlete', function(){
   it('athlete increase hydration by drinking from water bottle', function(){
     athlete.hydration = 0;
     athlete.distanceCovered = 10;
-    athlete.hydrate();
+    bottle.fill();
+    athlete.hydrate(bottle);
     assert.equal(100, athlete.hydration);
+    assert.equal(90, bottle.volume);
   })
 })
 

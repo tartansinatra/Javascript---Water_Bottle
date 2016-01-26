@@ -7,11 +7,13 @@ var athlete = {
       this.distanceCovered + 0;
     }else{
       this.hydration -= 10,
-    this.distanceCovered += 1;
-        }
-  hydrate: function(){
-    this.hydration = 100;
+      this.distanceCovered += 1;
+    }
   },
+  hydrate: function(bottle){
+    bottle.drink();
+    this.hydration = 100;
+  }
 }
 
 module.exports = athlete;
